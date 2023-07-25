@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'publicaciones',
+    'djongo',
 ]
 
 MIDDLEWARE = [
@@ -74,20 +75,14 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# settings.py
-
-# settings.py
-
-# Conexión a la base de datos PostgreSQL
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog001',
-        'USER': 'postgres',
-        'PASSWORD': 'D3mon1o.',
-        'HOST': 'localhost',  # Puedes cambiar esta dirección si PostgreSQL está en otro equipo
-        'PORT': '5432',          # Por defecto es el puerto 5432
+        'ENGINE': 'djongo',
+        'NAME': 'blog',
+        'CLIENT': {
+            'host': 'localhost',  # Cambia esta dirección si tu servidor MongoDB está en otro equipo
+            'port': 27017,       # Puerto de MongoDB (por defecto es 27017)
+        },
     }
 }
 
