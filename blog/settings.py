@@ -78,16 +78,16 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 # settings.py
 
-# Conexión a la base de datos MySQL
+# Conexión a la base de datos PostgreSQL
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'blog001',
-        'USER': 'root',
+        'USER': 'postgres',
         'PASSWORD': 'D3mon1o.',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'HOST': 'localhost',  # Puedes cambiar esta dirección si PostgreSQL está en otro equipo
+        'PORT': '5432',          # Por defecto es el puerto 5432
     }
 }
 
