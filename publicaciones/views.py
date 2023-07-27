@@ -1,3 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
-# Create your views here.
+class HolaMundoView(TemplateView):
+    template_name = 'hola_mundo.html'
