@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Lista de Publicaciones
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row bg-primary text-white">
+        <div class="col-12">
+            <!-- Contenido de la lista de publicaciones -->
+            <h1 class="text-center">Lista de Publicaciones</h1>
+            <ul>
+                {% for publicacion in publicaciones %}
+                <li>
+                    <h2>{{ publicacion.titulo }}</h2>
+                    <p>{{ publicacion.contenido }}</p>
+                    <div class="text-center">
+                        <a href="{% url 'detalle_publicacion' pk=publicacion.pk %}" class="btn btn-primary me-2">Ver detalles</a>
+                        <a href="{% url 'actualizar_publicacion' pk=publicacion.pk %}" class="btn btn-warning me-2">Actualizar</a>
+                        <a href="{% url 'eliminar_publicacion' pk=publicacion.pk %}" class="btn btn-danger">Eliminar</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

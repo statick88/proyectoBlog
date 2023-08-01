@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Eliminar Comentario
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row bg-primary text-white bg-dark">
+        <div class="col-12">
+            <h1 class="text-center">Eliminar Comentario</h1>
+            <p class="text-center">¿Estás seguro de que deseas eliminar el comentario de "{{ comentario.autor }}" en "{{ comentario.publicacion.titulo }}"?</p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
